@@ -15,10 +15,9 @@ class RepositoryImpl(private val githubApi: GithubApi): Repository {
         }
     }
 
-    override fun loadMore(id: String, page: Int): Flow<List<SearchResponse.Items>> {
+    override fun loadMore(id: String, page: Int): Flow<SearchResponse.Items> {
         return flow {
-            val result = githubApi.searchUsers(id, page)
-            emit(result.items)
+
         }
     }
 }
